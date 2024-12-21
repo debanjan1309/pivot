@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Sector Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .admin-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .upload-section {
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin - Upload Sector Images</h1>
+    <div class="admin-container" id="adminContainer"></div>
+    <button onclick="saveImages()">Save Images</button>
+    <a href="Index.html" target="_blank" style="text-decoration: none;">
+        <button>BACK TO HOME PAGE</button>
+    </a>
+
+    <script>
+        const sectors = [
+            "NIFTY PHARMA", "NIFTY FMCG", "NIFTY FIN SERVICE", "NIFTY BANK", 
+            "NIFTY MEDIA", "NIFTY METAL", "NIFTY ENERGY", "NIFTY AUTO", 
+            "NIFTY MID SELECT", "NIFTY IT", "NIFTY PSU BANK", "NIFTY REALITY"
+        ];
+        const sectorImages = JSON.parse(localStorage.getItem('sectorImages')) || {};
+    
+        const adminContainer = document.getElementById('adminContainer');
+    
+        // Populate existing images if available
+        sectors.forEach(sector => {
+            const uploadSection = document.createElement('div');
+            uploadSection.className = 'upload-section';
+            uploadSection.innerHTML = `
+                <label for="${sector}">${sector}</label>
+                <input type="file" id="${sector}" accept="image/*">
+                <div id="preview-${sector}" style="margin-top: 10px;">
+                    ${sectorImages[sector] ? `<img src="${sectorImages[sector]}" alt="${sector}" style="max-width: 100px; border: 1px solid #ddd;">` : 'No image uploaded'}
+                </div>
+            `;
+            adminContainer.appendChild(uploadSection);
+        });
+    
+        function saveImages() {
+            sectors.forEach(sector => {
+                const fileInput = document.getElementById(sector);
+                if (fileInput.files.length > 0) {
+                    const file = fileInput.files[0];
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                        sectorImages[sector] = reader.result;
+                        localStorage.setItem('sectorImages', JSON.stringify(sectorImages));
+                        alert(`${sector} image uploaded successfully.`);
+                        document.getElementById(`preview-${sector}`).innerHTML = `
+                            <img src="${reader.result}" alt="${sector}" style="max-width: 100px; border: 1px solid #ddd;">
+                        `;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sector Performance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .sector-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .sector-card {
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: grab;
+        }
+        .sector-card:active {
+            cursor: grabbing;
+        }
+        #screenshot {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #screenshot img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        button {
+            width: auto;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 18px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sector Viewer</h1>
+    <div class="sector-container" id="sectorContainer"></div>
+    <div id="screenshot">
+        <h2>Selected Sector Screenshot</h2>
+        <img id="sectorImage" src="" alt="Select a sector to view its screenshot">
+        <a href="Index.html" target="_blank" style="text-decoration: none;">
+            <button>BACK TO HOME PAGE</button>
+        </a>
+    </div>
+
+    <script>
+        const sectors = [
+            "NIFTY PHARMA", "NIFTY FMCG", "NIFTY FIN SERVICE", "NIFTY BANK", 
+            "NIFTY MEDIA", "NIFTY METAL", "NIFTY ENERGY", "NIFTY AUTO", 
+            "NIFTY MID SELECT", "NIFTY IT", "NIFTY PSU BANK", "NIFTY REALITY"
+        ];
+        const sectorImages = JSON.parse(localStorage.getItem('sectorImages')) || {};
+    
+        const sectorContainer = document.getElementById('sectorContainer');
+        const sectorImage = document.getElementById('sectorImage');
+    
+        // Create movable cards
+        sectors.forEach(sector => {
+            const card = document.createElement('div');
+            card.className = 'sector-card';
+            card.textContent = sector;
+            card.draggable = true;
+            card.addEventListener('dragstart', dragStart);
+            card.addEventListener('dragover', dragOver);
+            card.addEventListener('drop', drop);
+            card.addEventListener('click', () => showImage(sector));
+            sectorContainer.appendChild(card);
+        });
+    
+        function dragStart(e) {
+            e.dataTransfer.setData('text/plain', e.target.textContent);
+        }
+    
+        function dragOver(e) {
+            e.preventDefault();
+        }
+    
+        function drop(e) {
+            e.preventDefault();
+            const draggedText = e.dataTransfer.getData('text/plain');
+            const dropTarget = e.target;
+            if (dropTarget.classList.contains('sector-card')) {
+                const draggedIndex = [...sectorContainer.children].findIndex(card => card.textContent === draggedText);
+                const dropIndex = [...sectorContainer.children].findIndex(card => card === dropTarget);
+                if (draggedIndex > -1 && dropIndex > -1) {
+                    const draggedCard = sectorContainer.children[draggedIndex];
+                    if (draggedIndex < dropIndex) {
+                        sectorContainer.insertBefore(draggedCard, dropTarget.nextSibling);
+                    } else {
+                        sectorContainer.insertBefore(draggedCard, dropTarget);
+                    }
+                }
+            }
+        }
+    
+        function showImage(sector) {
+            const imageUrl = sectorImages[sector] || "https://via.placeholder.com/800x400?text=No+Image+Uploaded";
+            sectorImage.src = imageUrl;
+        }
+    </script>
+    
+</body>
+</html>
