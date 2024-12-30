@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Mapping</title>
+    <link rel="icon" type="image/x-icon" href="css/favicon.ico">
+    <link rel='stylesheet' href='css/marketMap.css'>
+    <script src='js/marketMap.js'></script>
+</head>
+<body>
+    <button id="button" onclick="location.href='index.html'"></button>
+    <div class="tree">
+        <div class="node grandparent" onclick="toggleStocks('auto-sector')">Indian Stock Market</div>
+        
+        <div class="node parent" id="auto-sector" data-high="23986.05" data-low="22488.30" data-close="23099.05" onclick="toggleStocks('auto-children')">NIFTY AUTO</div>
+            <div class="children" id="auto-children">
+                <div class="branch">
+                    <div class="node parent" data-high="557" data-low="506.35" data-close="540.7">APOLLOTYRE</div>
+                    <div class="node parent" data-high="236.61" data-low="215.7" data-close="220.5">ASHOKLEY</div>
+                    <div class="node parent" data-high="9240" data-low="8719.9" data-close="8928.3">BAJAUTO</div>
+                    <div class="node parent" data-high="2901.25" data-low="2682.05" data-close="2863.5">BALKRISIND</div>
+                    <div class="node parent" data-high="1394.95" data-low="1272.20" data-close="1314.85">BHARATFORG</div>
+                    <div class="node parent" data-high="36997.35" data-low="34000" data-close="34089.65">BOSCHLTD</div>
+                    <div class="node parent" data-high="4954.95" data-low="4673.60" data-close="4876.9">EICHERMOT</div>
+                    <div class="node parent" data-high="472.5" data-low="411.3" data-close="418.4">EXIDEIND</div>
+                    <div class="node parent" data-high="4784.00" data-low="4228.55" data-close="4237.95">HEROMOTOCO</div>
+                    <div class="node parent" data-high="133500" data-low="124334" data-close="131276.45">MRF</div>
+                    <div class="node parent" data-high="3115" data-low="2886.35" data-close="3049.45">M&M</div>
+                    <div class="node parent" data-high="11375.95" data-low="10725" data-close="10941.05">MARUTI</div>
+                    <div class="node parent" data-high="174.57" data-low="154.57" data-close="157.02TVS">MOTHERSON</div>
+                    <div class="node parent" data-high="2572.8" data-low="2372.55" data-close="2420.45">TVSMOTOR</div>
+                    <div class="node parent" data-high="820.35" data-low="717.7" data-close="750.5">TATAMOTORS</div>
+                </div>
+            </div>
+
+        <div class="node parent" id="bank-sector" data-high="53888.3" data-low="50609.35" data-close="51311.30AU" onclick="toggleStocks('bank-children')">NIFTY BANK</div>
+            <div class="children" id="bank-children">
+                <div class="branch">
+                    <div class="node parent" data-high="603.75" data-low="534.45" data-close="552.20">AUBANK</div>
+                    <div class="node parent" data-high="1193.85" data-low="1065" data-close="1077.45">AXISBANK</div>
+                    <div class="node parent" data-high="266.95" data-low="237.77" data-close="244.99">BANKBARODA</div>
+                    <div class="node parent" data-high="110.80" data-low="99.10" data-close="100.36">CANBK</div>
+                    <div class="node parent" data-high="217" data-low="190.55" data-close="196.73">FEDERALBNK</div>
+                    <div class="node parent" data-high="1880" data-low="1767.05" data-close="1798.25">HDFCBANK</div>
+                    <div class="node parent" data-high="1350.45" data-low="1272.40" data-close="1307.55">ICICIBANK</div>
+                    <div class="node parent" data-high="66.59" data-low="61.20" data-close="62.52">IDFCFASTB</div>
+                    <div class="node parent" data-high="1011.5" data-low="926.45" data-close="953.4">INDUSINDBK</div>
+                    <div class="node parent" data-high="1813" data-low="1733.35" data-close="1759.90">KOTAKBANK</div>
+                    <div class="node parent" data-high="111.13" data-low="99.56" data-close="101.44">PNB</div>
+                    <div class="node parent" data-high="875.45" data-low="797.2" data-close="799.65">SBIN</div>
+                </div>
+            </div>
+
+        <div class="node parent" id="psubank-sector" data-high="7248.25" data-low="6545.00" data-close="6639.5" onclick="toggleStocks('psubank-children')">NIFTY PSU BANK</div>
+            <div class="children" id="psubank-children">
+                <div class="branch">
+                    <div class="node parent" data-high="266.95" data-low="237.77" data-close="244.99">BANKBARODA</div>
+                    <div class="node parent" data-high="120.5" data-low="101.86" data-close="102.8">BANKINDIA</div>
+                    <div class="node parent" data-high="59.85" data-low="52.24" data-close="52.72">MAHABANK</div>
+                    <div class="node parent" data-high="110.80" data-low="99.10" data-close="100.36">CANBK</div>
+                    <div class="node parent" data-high="61.9" data-low="53" data-close="53.13">CENTRALBK</div>
+                    <div class="node parent" data-high="615.15" data-low="529.00" data-close="547.2">INDIANB</div>
+                    <div class="node parent" data-high="59.94" data-low="51.14" data-close="51.33">IOB</div>
+                    <div class="node parent" data-high="56.3" data-low="47.49" data-close="47.69">PSB</div>
+                    <div class="node parent" data-high="111.13" data-low="99.56" data-close="101.44">PNB</div>
+                    <div class="node parent" data-high="875.45" data-low="797.2" data-close="799.65">SBIN</div>
+                    <div class="node parent" data-high="52" data-low="42.9" data-close="43.01">UCOBANK</div>
+                    <div class="node parent" data-high="130.9" data-low="115.85" data-close="117.87">UNIONBANK</div>
+                </div>
+            </div>
+                    
+        <div class="node parent" id="privatebank-sector" data-high="26110.90" data-low="24535.05" data-close="24847.35" onclick="toggleStocks('privatebank-children')">NIFTY PRIVATE BANK</div>
+            <div class="children" id="privatebank-children">
+                <div class="branch">
+                    <div class="node parent" data-high="1193.85" data-low="1065" data-close="1077.45">AXISBANK</div>
+                    <div class="node parent" data-high="179.28" data-low="157.01" data-close="160.79">BANDHANBNK</div>
+                    <div class="node parent" data-high="187.9" data-low="172.13" data-close="172.65">CUB</div>
+                    <div class="node parent" data-high="217" data-low="190.55" data-close="196.73">FEDERALBNK</div>
+                    <div class="node parent" data-high="1880" data-low="1767.05" data-close="1798.25">HDFCBANK</div>
+                    <div class="node parent" data-high="1350.45" data-low="1272.40" data-close="1307.55">ICICIBANK</div>
+                    <div class="node parent" data-high="66.59" data-low="61.20" data-close="62.52">IDFCFASTB</div>
+                    <div class="node parent" data-high="1011.5ICICI" data-low="926.45" data-close="953.4">INDUSINDBK</div>
+                    <div class="node parent" data-high="1813" data-low="1733.35" data-close="1759.90">KOTAKBANK</div>
+                    <div class="node parent" data-high="180.63" data-low="147.50" data-close="159.86">RBLBANK</div>
+                </div>
+            </div>            
+        
+        <div class="node parent" id="finserv-sector" data-high="24931.7" data-low="23525.75" data-close="23799" onclick="toggleStocks('finserv-children')">NIFTY FINSERV</div>
+            <div class="children" id="finserv-children">
+                <div class="branch">
+                    <div class="node parent" data-high="1193.85" data-low="1065" data-close="1077.45">AXISBANK</div>
+                    <div class="node parent" data-high="7257.4" data-low="6491" data-close="6907.75">BAJAJ FINANCE</div>
+                    <div class="node parent" data-high="1690.5" data-low="1551.65" data-close="1579.3">BAJAJ FINSERV</div>
+                    <div class="node parent" data-high="1364" data-low="1168" data-close="1193.85">CHOLAFIN</div>
+                    <div class="node parent" data-high="4579.95" data-low="4179.65" data-close="4263.1">HDFCAMC</div>
+                    <div class="node parent" data-high="1880" data-low="1767.05" data-close="1798.25">HDFCBANK</div>
+                    <div class="node parent" data-high="664" data-low="613.6" data-close="621.9">HDFCLIFE</div>
+                    <div class="node parent" data-high="1350.45" data-low="1272.40" data-close="1307.55">ICICIBANK</div>
+                    <div class="node parent" data-high="1998.5" data-low="1882.1" data-close="1832.45">ICICIGI</div>
+                    <div class="node parent" data-high="704" data-low="643.35" data-close="656.15">ICICIPRULI</div>
+                    <div class="node parent" data-high="1813" data-low="1733.35" data-close="1759.90">KOTAKBANK</div>
+                    <div class="node parent" data-high="648.9" data-low="577.1" data-close="596.6">LICHSGFIN</div>
+                    <div class="node parent" data-high="7048.6" data-low="6139.5" data-close="6341.2">MCX</div>
+                    <div class="node parent" data-high="2154" data-low="1910.1" data-close="2069.6">MUTHOOTFIN</div>
+                    <div class="node parent" data-high="523.9" data-low="440" data-close="452.05">PFC</div>
+                    <div class="node parent" data-high="573.3" data-low="505.65" data-close="507.45">RECLTD</div>
+                    <div class="node parent" data-high="742.9" data-low="674" data-close="675.3">SBICARD</div>
+                    <div class="node parent" data-high="1484.4" data-low="1377.5" data-close="1405.3">SBILIFE</div>
+                    <div class="node parent" data-high="3267.6" data-low="2843.65" data-close="2898.9">SRIRAM FIN</div>
+                    <div class="node parent" data-high="875.45" data-low="797.2" data-close="799.65">SBI</div>
+                </div>
+            </div> 
+        
+        <div class="node parent" id="fmcg-sector" data-high="58090.8" data-low="55455.15" data-close="56436.75" onclick="toggleStocks('fmcg-children')">NIFTY FMCG</div>
+            <div class="children" id="fmcg-children">
+                <div class="branch">
+                    <div class="node parent" data-high="613.4" data-low="515.6" data-close="520.1">BALRAMCHIN</div>
+                    <div class="node parent" data-high="4973.9" data-low="4663.8" data-close="4769.3">BRITANNIA</div>
+                    <div class="node parent" data-high="2957" data-low="2705.5" data-close="2726.45">COLPAL</div>
+                    <div class="node parent" data-high="529.05" data-low="499.5" data-close="507.15">DABUR</div>
+                    <div class="node parent" data-high="1255" data-low="1060" data-close="1067.8">GODREJCP</div>
+                    <div class="node parent" data-high="2515" data-low="2315.25" data-close="2341.25">HINDUNILVR</div>
+                    <div class="node parent" data-high="481.9" data-low="451.65" data-close="478.6">ITC</div>
+                    <div class="node parent" data-high="649.15" data-low="600.55" data-close="662.6">MARICO</div>
+                    <div class="node parent" data-high="2291.95" data-low="2145.4" data-close="2165.6">NESTLEIND</div>
+                    <div class="node parent" data-high="16190" data-low="14410" data-close="14567.7">PGHH</div>
+                    <div class="node parent" data-high="2608.95" data-low="2318.90" data-close="2551.55">RADICO</div>
+                    <div class="node parent" data-high="976.4" data-low="882.9" data-close="907.95">TATACONSUM</div>
+                    <div class="node parent" data-high="2068.55" data-low="1931.15" data-close="2030.15">UBL</div>
+                    <div class="node parent" data-high="1595.85" data-low="1901467.35" data-close="1579.4">UNITDSPR</div>
+                    <div class="node parent" data-high="657.2" data-low="598.8" data-close="624.3">VBL</div>
+                </div>
+            </div>            
+        
+        <div class="node parent" id="healthcare-sector" data-high="14741" data-low="14140.4" data-close="14613.75" onclick="toggleStocks('healthcare-children')">NIFTY HEALTHCARE</div>
+            <div class="children" id="healthcare-children">
+                <div class="branch">
+                    <div class="node parent" data-high="29658.85" data-low="27800" data-close="29263.5">ABBOTINDIA</div>
+                    <div class="node parent" data-high="5751" data-low="5341.55" data-close="5482.7">ALKEM</div>
+                    <div class="node parent" data-high="7389.9" data-low="6821.1" data-close="7246.3">APOLLOHOSP</div>
+                    <div class="node parent" data-high="1276.5" data-low="1173.1" data-close="1269.95">AUROPHARMA</div>
+                    <div class="node parent" data-high="381.5" data-low="329" data-close="352.55">BIOCON</div>
+                    <div class="node parent" data-high="1549.4" data-low="1423.8" data-close="1506.6">CIPLA</div>
+                    <div class="node parent" data-high="6285.45" data-low="5716.5" data-close="5881.055">DIVISLAB</div>
+                    <div class="node parent" data-high="3207" data-low="3800.25" data-close="2948.7">LALPATHLAB</div>
+                    <div class="node parent" data-high="1398.25" data-low="1202.3" data-close="1389.45">DRREDDY</div>
+                    <div class="node parent" data-high="1604.5" data-low="1446.5" data-close="1585.95">GLENMARK</div>
+                    <div class="node parent" data-high="628" data-low="526.95" data-close="585.85">GRANULES</div>
+                    <div class="node parent" data-high="1640.00" data-low="1470.5" data-close="1632.65">IPCALAB</div>
+                    <div class="node parent" data-high="593" data-low="554.1" data-close="586.7">LAURUSLABS</div>
+                    <div class="node parent" data-high="2238.00" data-low="2038.00" data-close="2227.8">LUPIN</div>
+                    <div class="node parent" data-high="1215.55" data-low="970.15" data-close="1126.4">MAXHEALTH</div>
+                    <div class="node parent" data-high="2249.5" data-low="1980.05" data-close="2058.15">METROPOLIS</div>
+                    <div class="node parent" data-high="1866" data-low="1774.05" data-close="1861.25">SUNPHARMA</div>
+                    <div class="node parent" data-high="960.6" data-low="831" data-close="850.35">SYNGENE</div>
+                    <div class="node parent" data-high="3515.35" data-low="3294.05" data-close="3405.10">TORRENTPHARMA</div>
+                    <div class="node parent" data-high="1000" data-low="953.10" data-close="972.4">ZYDUSLIFE</div>
+                </div>
+            </div>
+        
+        <div class="node parent" id="it-children" data-high="46088.9" data-low="42860.8" data-close="43707.00" onclick="toggleStocks('it-children')">NIFTY IT</div>
+            <div class="children" id="it-children">
+                <div class="branch">
+                    <div class="node parent" data-high="9797.1" data-low="8595" data-close="9415.1">COFORGE</div>
+                    <div class="node parent" data-high="1980" data-low="1835.45" data-close="1892">HCLTECH</div>
+                    <div class="node parent" data-high="2006.45" data-low="1835.20" data-close="1916.75">INFY</div>
+                    <div class="node parent" data-high="5439" data-low="4652.05" data-close="4692.3">LTTS</div>
+                    <div class="node parent" data-high="6767.95" data-low="5650.7" data-close="5678">LTIM</div>
+                    <div class="node parent" data-high="3237.95" data-low="2875.35" data-close="2883.95">MPHASIS</div>
+                    <div class="node parent" data-high="6788.9" data-low="5853.65" data-close="6393.6">PERSISTENT</div>
+                    <div class="node parent" data-high="4494.9" data-low="4114.9" data-close="4164.85">TCS</div>
+                    <div class="node parent" data-high="1807.7" data-low="1680.10" data-close="1711.65">TECHM</div>
+                    <div class="node parent" data-high="320" data-low="389.1" data-close="309.1">Wipro</div>
+                </div>
+            </div>
+        
+        <div class="node parent" id="media-sector" data-high="2095.65" data-low="1838.05" data-close="1847.05" onclick="toggleStocks('media-children')">NIFTY MEDIA</div>
+            <div class="children" id="media-children">
+                <div class="branch">
+                    <div class="node parent" data-high="46.74" data-low="40.01" data-close="41.43">DEN</div>
+                    <div class="node parent" data-high="12.49" data-low="10.15" data-close="10.22">DISHTV</div>
+                    <div class="node parent" data-high="18.55" data-low="14.10" data-close="15.56">HATHWAY</div>
+                    <div class="node parent" data-high="1069.6" data-low="972.6" data-close="1026.65">NAZARA</div>
+                    <div class="node parent" data-high="81.25" data-low="70.01" data-close="73.19">NETWORK18</div>
+                    <div class="node parent" data-high="1620" data-low="1320.35" data-close="1338.65">PVRINOX</div>
+                    <div class="node parent" data-high="531" data-low="462.9" data-close="467.15">SAREGAMA</div>
+                    <div class="node parent" data-high="782.9" data-low="679" data-close="686.45">SUNTV</div>
+                    <div class="node parent" data-high="910.7" data-low="782.05" data-close="794.85">TIPSMUSIC</div>
+                    <div class="node parent" data-high="144.28" data-low="124" data-close="124.71">ZEEL</div>
+                </div>
+            </div>
+        
+        <div class="node parent" id="metal-sector" data-high="9605.35" data-low="8707.65" data-close="8820.5" onclick="toggleStocks('metal-children')">NIFTY METAL</div>
+            <div class="children" id="metal-children">
+                <div class="branch">
+                    <div class="node parent" data-high="1645.8" data-low="1473" data-close="1514.95">APLAPOLLO</div>
+                    <div class="node parent" data-high="2558" data-low="2332.75" data-close="2409.95">ADANIENT</div>
+                    <div class="node parent" data-high="679.8" data-low="614.1" data-close="617.4">HINDALCO</div>
+                    <div class="node parent" data-high="295.4" data-low="255.05" data-close="256.5">HINDCOPPER</div>
+                    <div class="node parent" data-high="516.4" data-low="451.8" data-close="454.7">HINDZINC</div>
+                    <div class="node parent" data-high="1023.5" data-low="911.25" data-close="913.3">JSWSTEEL</div>
+                    <div class="node parent" data-high="763.95" data-low="675.2" data-close="736">JSL</div>
+                    <div class="node parent" data-high="1011.45" data-low="883.95" data-close="923.55">JINDALSTEEL</div>
+                    <div class="node parent" data-high="82.83" data-low="69.13" data-close="69.32">NMDC</div>
+                    <div class="node parent" data-high="255.65" data-low="212.4" data-close="213.59">NATIONALUM</div>
+                    <div class="node parent" data-high="3460.6" data-low="3220.65" data-close="3300.1">RATNAMANI</div>
+                    <div class="node parent" data-high="130.09" data-low="115.2" data-close="115.53">SAIL</div>
+                    <div class="node parent" data-high="152.5" data-low="138.61" data-close="138.91">TATASTEEL</div>
+                    <div class="node parent" data-high="526.95" data-low="450.2" data-close="451.1">VEDL</div>
+                    <div class="node parent" data-high="824.45" data-low="758" data-close="810.2">WELCORP</div>
+                </div>
+            </div>            
+
+        <div class="node parent" id="pharma-sector" data-high="23066.10" data-low="21798" data-close="22756.3" onclick="toggleStocks('pharma-children')">NIFTY PHARMA</div>
+            <div class="children" id="pharma-children">
+                <div class="branch">
+                    <div class="node parent" data-high="29658.85" data-low="27800" data-close="29263.5">ABBOTINDIA</div>
+                    <div class="node parent" data-high="3115.9" data-low="2751.2" data-close="3044">AJANTAPHARMA</div>
+                    <div class="node parent" data-high="5751" data-low="5341.55" data-close="5482.7">ALKEM</div>
+                    <div class="node parent" data-high="1276.5" data-low="1173.1" data-close="1269.95">AUROPHARMA</div>
+                    <div class="node parent" data-high="381.5" data-low="329" data-close="352.55">BIOCON</div>
+                    <div class="node parent" data-high="1549.4" data-low="1423.8" data-close="1506.6">CIPLA</div>
+                    <div class="node parent" data-high="6285.45" data-low="5716.5" data-close="5881.055">DIVISLAB</div>
+                    <div class="node parent" data-high="1398.25" data-low="1202.3" data-close="1389.45">DRREDDY</div>
+                    <div class="node parent" data-high="1864" data-low="1725" data-close="1810.65">GLAND</div>
+                    <div class="node parent" data-high="1604.5" data-low="1446.5" data-close="1585.95">GLENMARK</div>
+                    <div class="node parent" data-high="628" data-low="526.95" data-close="585.85">GRANULES</div>
+                    <div class="node parent" data-high="1640.00" data-low="1470.5" data-close="1632.65">IPCALAB</div>
+                    <div class="node parent" data-high="1952" data-low="1734" data-close="1818.55">JBCHEMPHARMA</div>
+                    <div class="node parent" data-high="593" data-low="554.1" data-close="586.7">LAURUSLABS</div>
+                    <div class="node parent" data-high="2238.00" data-low="2038.00" data-close="2227.8">LUPIN</div>
+                    <div class="node parent" data-high="3054.8" data-low="2535.4" data-close="2871.75">MANKIND</div>
+                    <div class="node parent" data-high="1505" data-low="1356.65" data-close="1392">NATCOPHARMA</div>
+                    <div class="node parent" data-high="1866" data-low="1774.05" data-close="1861.25">SUNPHARMA</div>
+                    <div class="node parent" data-high="3515.35" data-low="3294.05" data-close="3405.10">TORRENTPHARMA</div>
+                    <div class="node parent" data-high="1000" data-low="953.10" data-close="972.4">ZYDUSLIFE</div>
+                </div>
+            </div>
+                
+        <div class="node parent" id="reality-sector" data-high="1137.5" data-low="1016.15" data-close="1076.95" onclick="toggleStocks('reality-children')">NIFTY REALITY</div>
+            <div class="children" id="reality-children">
+                <div class="branch">
+                    <div class="node parent" data-high="1340.5" data-low="1215.25" data-close="1246.7">BRIGADE</div>
+                    <div class="node parent" data-high="896.6" data-low="818.1" data-close="834.85">DLF</div>
+                    <div class="node parent" data-high="3015" data-low="2763.8" data-close="2830.7">GODREJPRC</div>
+                    <div class="node parent" data-high="1523" data-low="1246" data-close="1408.35">LODHA</div>
+                    <div class="node parent" data-high="517" data-low="461.1" data-close="471.8">MAHLIFE</div>
+                    <div class="node parent" data-high="2343.65" data-low="1993.9" data-close="2315.8">OBEROIRLTY</div>
+                    <div class="node parent" data-high="1902" data-low="1575.45" data-close="1696.35">PHOENIXLTD</div>
+                    <div class="node parent" data-high="1900" data-low="1615.9" data-close="1752.5">PRESTIGE</div>
+                    <div class="node parent" data-high="1908" data-low="1601.1" data-close="1731.05">RAYMOND</div>
+                    <div class="node parent" data-high="1718.85" data-low="1531.8" data-close="1602.25">SOBHA</div>
+                </div>
+            </div>
+                
+        <div class="node parent" id="consumerDurables-sector" data-high="43243.95" data-low="40139.5" data-close="41764.5" onclick="toggleStocks('consumerDurables-children')">NIFTY CONSUMER DURABLES</div> 
+            <div class="children" id="consumerDurables-children">
+                <div class="branch">
+                    <div class="node parent" data-high="7977" data-low="5647.4" data-close="7442.95">AMBER</div>
+                    <div class="node parent" data-high="1457.5" data-low="1327.85" data-close="1381.3">BATAINDIA</div>
+                    <div class="node parent" data-high="2168.15" data-low="1814" data-close="2072.95">BLUESTARCO</div>
+                    <div class="node parent" data-high="879.75" data-low="718.4" data-close="752.95">CENTURYPLY</div>
+                    <div class="node parent" data-high="8014.95" data-low="7175.1" data-close="7172.95">CERA</div>
+                    <div class="node parent" data-high="419.45" data-low="383.9" data-close="396.35">CROMPTON</div>
+                    <div class="node parent" data-high="19148.9" data-low="16020" data-close="17972.3">DIXON</div>
+                    <div class="node parent" data-high="1782.65" data-low="1646.15" data-close="1649.9">HAVELS</div>
+                    <div class="node parent" data-high="1236.75" data-low="1103.35" data-close="1118.4">KAJARIACER</div>
+                    <div class="node parent" data-high="784.45" data-low="701" data-close="721.65">KALYANKJIL</div>
+                    <div class="node parent" data-high="261.8" data-low="224.87" data-close="234.55">RAJESHEXPO</div>
+                    <div class="node parent" data-high="3518" data-low="3222.05" data-close="3309.2">TITAN</div>
+                    <div class="node parent" data-high="449.5" data-low="408.4" data-close="417.2">VGAURD</div>
+                    <div class="node parent" data-high="1832.95" data-low="1656" data-close="1705.3">VOLTAS</div>
+                    <div class="node parent" data-high="1981.1" data-low="1801.2" data-close="1875.2">WHIRLPOOL</div>
+                </div>
+            </div>
+
+        <!-- <div class="node parent" id="midsmallHealthcare-sector" data-high="43814.90" data-low="42084.55" data-close="43130.35" onclick="toggleStocks('midsmallHealthcare-children')">NIFTY MID SMALL HEALTHCARE</div>
+            <div class="children" id="midsmallHealthcare-children">
+                <div class="branch">
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">ABBOTINDIA</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">AJANTPHARM</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">APLLTD</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">ALKEM</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">AUROPHARMA</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">LALPATHLAB</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">ERIS</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">FORTIS</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">GLAXO</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">GLENMARK</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">GRANULES</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">IPCALAB</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">JBCHEPHARM</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">JUBLPHARMA</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">KIMS</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">LAURUSLABS</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">MAXHEALTH</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">MEDPLUS</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">METROPOLIS</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">NATCOPHARM</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">NH</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">PFIZER</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">POLYMED</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">PGHL</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">SANOFI</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">SEQUENT</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">SOLARA</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">STAR</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">SUVENPAHR</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">SYNGENE</div>
+                </div>
+            </div> -->
+
+        <div class="node parent" id="pse-sector" data-high="23986.10398.5" data-low="9540.75" data-close="9676.35" onclick="toggleStocks('pse-children')">NIFTY PSE</div>
+            <div class="children" id="pse-children">
+                <div class="branch">
+                    <div class="node parent" data-high="320.85" data-low="288" data-close="292.05">BEL</div>
+                    <div class="node parent" data-high="256.55" data-low="232" data-close="235.4">BHEL</div>
+                    <div class="node parent" data-high="308.95" data-low="282.05" data-close="293.55">BPCL</div>
+                    <div class="node parent" data-high="425.9" data-low="379.55" data-close="380.5">COALINDIA</div>
+                    <div class="node parent" data-high="866" data-low="765.05" data-close="784.15">CONCOR</div>
+                    <div class="node parent" data-high="213.4" data-low="188.73" data-close="192.5">GAIL</div>
+                    <div class="node parent" data-high="4755" data-low="4150" data-close="4233.35">HAL</div>
+                    <div class="node parent" data-high="421.5" data-low="379.2" data-close="410.7">HINDPETRO</div>
+                    <div class="node parent" data-high="145.1" data-low="133.54" data-close="136.25">IOC</div>
+                    <div class="node parent" data-high="859.7" data-low="777.2" data-close="779.25">IRCTC</div>
+                    <div class="node parent" data-high="166.9" data-low="145.52" data-close="146.22">IRFC</div>
+                    <div class="node parent" data-high="88.79" data-low="80.05" data-close="80.33">NHPC</div>
+                    <div class="node parent" data-high="82.83" data-low="69.13" data-close="69.32">NMDC</div>
+                    <div class="node parent" data-high="264.7" data-low="235.3" data-close="236.9">ONGC</div>
+                    <div class="node parent" data-high="375.15" data-low="330.5" data-close="335">NTPC</div>
+                    <div class="node parent" data-high="502.95" data-low="414" data-close="425.15">OIL</div>
+                    <div class="node parent" data-high="505.35" data-low="432.8" data-close="495.3">PFC</div>
+                    <div class="node parent" data-high="557" data-low="506" data-close="540">POWERGRID</div>
+                    <div class="node parent" data-high="573.3" data-low="505.65" data-close="507.45">RECLTD</div>
+                    <div class="node parent" data-high="130.09" data-low="115.2" data-close="115.53">SAIL</div>
+                </div>
+            </div>
+
+        <div class="node parent" id="infra-sector" data-high="8980.55" data-low="8433.1" data-close="8537.75" onclick="toggleStocks('infra-children')">NIFTY INFRA</div>
+            <div class="children" id="infra-children">
+                <div class="branch">
+                    <div class="node parent" data-high="1309.5" data-low="1174.25" data-close="1230.7">ADANIPORTS</div>
+                    <div class="node parent" data-high="7389.9" data-low="6821.1" data-close="7246.3">APOLLOHOSP</div>
+                    <div class="node parent" data-high="584.2" data-low="530.05" data-close="547.95">AMBUJACEM</div>
+                    <div class="node parent" data-high="236.61" data-low="215.7" data-close="220.51">ASHOKLEY</div>
+                    <div class="node parent" data-high="1394.95" data-low="1272.7" data-close="1314.85">BHARATFORG</div>
+                    <div class="node parent" data-high="308.95" data-low="282.05" data-close="293.55">BPCL</div>
+                    <div class="node parent" data-high="1687" data-low="1870.05" data-close="1599.85">BHARTIARTL</div>
+                    <div class="node parent" data-high="866" data-low="765.05" data-close="784.15">CONCOR</div>
+                    <div class="node parent" data-high="3691" data-low="3178.1" data-close="3297.65">CUMMINSIND</div>
+                    <div class="node parent" data-high="896.6" data-low="818.10" data-close="834.85">DLF</div>
+                    <div class="node parent" data-high="213.4" data-low="188.73" data-close="192.5">GAIL</div>
+                    <div class="node parent" data-high="3015" data-low="2763.8" data-close="2830.7">GODREJPROP</div>
+                    <div class="node parent" data-high="2733.75" data-low="2472.5" data-close="2480.3">GRASIM</div>
+                    <div class="node parent" data-high="421.5" data-low="379.2" data-close="410.7">HINDPETRO</div>
+                    <div class="node parent" data-high="886.2" data-low="790.85" data-close="860.6">INDHOTEL</div>
+                    <div class="node parent" data-high="145.1" data-low="133.54" data-close="136.25">IOC</div>
+                    <div class="node parent" data-high="859.7" data-low="777.2" data-close="779.25">IRCTC</div>
+                    <div class="node parent" data-high="375" data-low="327.15" data-close="3329.55">INDUSTOWER</div>
+                    <div class="node parent" data-high="4740" data-low="4193.35" data-close="4681.95">INDIGO</div>
+                    <div class="node parent" data-high="3963.5" data-low="3603.5" data-close="3608.1">LT</div>
+                    <div class="node parent" data-high="133500" data-low="124261" data-close="131553.8">MRF</div>
+                    <div class="node parent" data-high="264.7" data-low="235.3" data-close="236.9">ONGC</div>
+                    <div class="node parent" data-high="375.15" data-low="330.5" data-close="335">xNTPC</div>
+                    <div class="node parent" data-high="336.25" data-low="308.75" data-close="309.4">POWERGRID</div>
+                    <div class="node parent" data-high="1329.95" data-low="1201.5" data-close="1221.05">RELIANCE</div>
+                    <div class="node parent" data-high="174.57" data-low="154.57" data-close="157.02">MOTHERSON</div>
+                    <div class="node parent" data-high="28494.9" data-low="25864.65" data-close="26049">SHREECEM</div>
+                    <div class="node parent" data-high="8035.95" data-low="6522.25" data-close="6546">SIEMENS</div>
+                    <div class="node parent" data-high="447.7" data-low="396.85" data-close="399">TATAPOWER</div>
+                    <div class="node parent" data-high="12145.35" data-low="11206.7" data-close="11406.55">ULTRACEMCO</div>
+                </div>
+            </div>
+
+        <div class="node parent" id="mnc-sector" data-high="29615.1" data-low="27827.1" data-close="28012.55" onclick="toggleStocks('mnc-children')">NIFTY MNC</div>
+            <div class="children" id="mnc-children">
+                <div class="branch">
+                    <div class="node parent" data-high="32301.55" data-low="30351.9" data-close="30436">3MINDIA</div>
+                    <div class="node parent" data-high="7960" data-low="6822.05" data-close="6846.09">ABB</div>
+                    <div class="node parent" data-high="29658.85" data-low="27800" data-close="29263.5">ABBOTINDIA</div>
+                    <div class="node parent" data-high="584.2" data-low="530.05" data-close="547.95">AMBUJACEM</div>
+                    <div class="node parent" data-high="236.61" data-low="215.7" data-close="220.51">ASHOKLEY</div>
+                    <div class="node parent" data-high="1457.5" data-low="1327.85" data-close="1381.3">BATAINDIA</div>
+                    <div class="node parent" data-high="36997.35" data-low="34000" data-close="34089.65">BOSCHLTD</div>
+                    <div class="node parent" data-high="4973.9" data-low="4663.8" data-close="4769.3">BRITANNIA</div>
+                    <div class="node parent" data-high="5912" data-low="5163.05" data-close="5586.05">CRISIL</div>
+                    <div class="node parent" data-high="224.9" data-low="194.81" data-close="195.64">CASTROLIND</div>
+                    <div class="node parent" data-high="2957" data-low="2705.5" data-close="2726.45">COLPAL</div>
+                    <div class="node parent" data-high="3691" data-low="3178.1" data-close="3297.65">CUMMINSIND</div>
+                    <div class="node parent" data-high="3580" data-low="3102" data-close="3258.4">ESCORTS</div>
+                    <div class="node parent" data-high="1864" data-low="1725" data-close="1810.65">GLAND</div>
+                    <div class="node parent" data-high="2280" data-low="1935.75" data-close="1948">GRINDWELL</div>
+                    <div class="node parent" data-high="2515" data-low="2315.25" data-close="2341.25">HINDUNILVR</div>
+                    <div class="node parent" data-high="42612.1" data-low="39336.6" data-close="41315.6">HONAUT</div>
+                    <div class="node parent" data-high="1952" data-low="1730" data-close="1818.55">JBCHEPHARM</div>
+                    <div class="node parent" data-high="7058.95" data-low="6125" data-close="546149.3">LINDEINDIA</div>
+                    <div class="node parent" data-high="11375.95" data-low="10725" data-close="10941.05">MARUTI</div>
+                    <div class="node parent" data-high="2291.95" data-low="2145.4" data-close="2165.6">NESTLEIND</div>
+                    <div class="node parent" data-high="12983.55" data-low="11670.9" data-close="12646.2">OFSS</div>
+                    <div class="node parent" data-high="16190" data-low="14410" data-close="14567.7">PGHH</div>
+                    <div class="node parent" data-high="5210" data-low="4401.25" data-close="4576.5">SKFINDIA</div>
+                    <div class="node parent" data-high="3780" data-low="3256.7" data-close="3443.6">SCHAEFFLER</div>
+                    <div class="node parent" data-high="8035.95" data-low="6522.25" data-close="6546">SIEMENS</div>
+                    <div class="node parent" data-high="3492.4" data-low="3100" data-close="3114.95">TIMKEN</div>
+                    <div class="node parent" data-high="2068.55" data-low="1931.15" data-close="2030.15">UBL</div>
+                    <div class="node parent" data-high="1595.85" data-low="1467.35" data-close="1579.4">UNITDSPR</div>
+                    <div class="node parent" data-high="526.95" data-low="450.2" data-close="451.1">VEDL</div>
+                </div>
+            </div>
+
+        <div class="node parent" id="energy-sector" data-high="38136.85" data-low="34818" data-close="35234.35" onclick="toggleStocks('energy-children')">NIFTY ENERGY</div>
+            <div class="children" id="energy-children">
+                <div class="branch">
+                    <div class="node parent" data-high="1447.7" data-low="1015.10" data-close="1054">ADANIGREEN</div>
+                    <div class="node parent" data-high="566.6" data-low="491.05" data-close="506.75">ADANIPOWER</div>
+                    <div class="node parent" data-high="308.95" data-low="282.05" data-close="293.55">BPCL</div>
+                    <div class="node parent" data-high="425.9" data-low="379.55" data-close="380.5">COALINDIA</div>
+                    <div class="node parent" data-high="145.1" data-low="133.54" data-close="136.25">IOC</div>
+                    <div class="node parent" data-high="264.7" data-low="235.3" data-close="236.9">ONGC</div>
+                    <div class="node parent" data-high="375.15" data-low="330.5" data-close="335">NTPC</div>
+                    <div class="node parent" data-high="336.25" data-low="308.75" data-close="309.4">POWERGRID</div>
+                    <div class="node parent" data-high="1329.95" data-low="1201.5" data-close="1221.05">RELIANCE</div>
+                    <div class="node parent" data-high="447.7" data-low="396.85" data-close="399">TATAPOWER</div>
+                </div>
+            </div>
+
+        <!-- <div class="node parent" id="finservExBank-sector" data-high="5000" data-low="4000" data-close="4900" onclick="toggleStocks('finservExBank-children')">NIFTY FINSERV EX BANK</div>    
+            <div class="children" id="finservExBank-children">
+                <div class="branch">
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">ADITYA BIRLA CAPITAL</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">BSE</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">BAJAJ FINANCE</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">BAJAJ FINSERV</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">BAJAJ HOLDING AND INV LTD</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">CANFINHOME</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">CHOLAMANDALAM INV&FIN CO</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">HDFC ASSET MNGT CO</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">HDFC LIFE INS CO</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">ICICI LUMBARD GEN INS CO</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">ICICI PRUDENTIAL LIFE INS CO</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">INDIAN ENERGY EX</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">IRFC</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">JIO FIN SERV</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">L&T FIN</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">LIC HOUSING FIN</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">LIC</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">M&M FINSERV</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">MANNAPURAM FIN</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">MAX FINSERV</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">MCX</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">MUTTU FINANCE</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">PB FINTECH</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">PIRAMAL ENTERPRISE</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">PFC</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">REC LTD</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">SBI CARD & PAYMENT LTD</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">SBI LIFE INS CO</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">SRIRAM FIN</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">SUNDARAM FIN</div>
+                </div>
+            </div> -->            
+        
+        <!-- <div class="node parent" id="oilGas-sector" data-high="5000" data-low="4000" data-close="4900" onclick="toggleStocks('oilGas-children')">NIFTY OIL & GAS</div>
+            <div class="children" id="oilGas-children">
+                <div class="branch">
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">ATGL</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">AEGISLOG</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">BPCL</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">CASTTROLIND</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">GAIL</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">GUJGASLTD</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">GSPL</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">HINDPETRO</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">IOC</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">IGL</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">MGL</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">ONGC</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">OIL</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">PETRONET</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">RELIANCE</div>
+                </div>
+            </div> -->
+                    
+        <!-- <div class="node parent" id="midsmallFinserv-sector" data-high="5000" data-low="4000" data-close="4900" onclick="toggleStocks('midsmallFinserv-children')">NIFTY MID SMALL FINSERV</div>
+            <div class="children" id="midsmallFinserv-children">
+                <div class="branch">
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">AUBANK</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">ABCAPITAL</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">BSE</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">BANDHANBNK</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">CANFIMHOME</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">CDSL</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">CHOLAHLDNG</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">CUB</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">CAMS</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">FEDERALBNK</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">HDFCAMC</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">IDFCFIRSTB</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">INDIANB</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">IEX</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">KARURVYSYA</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">LTF</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">LICHSGFIN</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">M&MFIN</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">MANNAPURAM</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">MFSL</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">MCX</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">MUTHOOTFIN</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">PAYTM</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">POLICYBZR</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">PEL</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">POONAWALLA</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">RBLBANK</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">SBICARD</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">SUNDARMFIN</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">YESBANK</div>
+                </div>
+            </div> -->
+        
+        <!-- <div class="node parent" id="midsmallItTelecom-sector" data-high="5000" data-low="4000" data-close="4900" onclick="toggleStocks('midsmallItTelecom-children')">NIFTY MID SMALL IT & TELECOM</div>
+            <div class="children" id="midsmallItTelecom-children">
+                <div class="branch">
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">BSOFT</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">COFORGE</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">CYIENT</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">FSL</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">HFCL</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">HAPPSTMINDS</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">INTELLECT</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">KPITTECH</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">LTTS</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">MASTEK</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">MPHASIS</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">OFSS</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">PERSISTENT</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">ROUTE</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">SONATSOFTW</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">STLTECH</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">TATACOMM</div>
+                    <div class="node parent" data-high="1200" data-low="1100" data-close="1000">TATALXSI</div>
+                    <div class="node parent" data-high="123" data-low="100" data-close="120">IDEA</div>
+                    <div class="node parent" data-high="2000" data-low="1900" data-close="1990">ZENSARTECH</div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</body>
+</html>
