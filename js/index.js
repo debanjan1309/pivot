@@ -28,7 +28,7 @@ function calculatePivot() {
     document.getElementById('resistance3').textContent = `Resistance 3: ${resistance3.toFixed(2)}`;
 }
 
-//------------------------------------------------------------------------------------------------------------------------>
+//------------------------------------------------------------------------------------------------------------------------------------------>
 
 function calculateVibration() {
     const inputValue = parseFloat(document.getElementById('inputValue').value);
