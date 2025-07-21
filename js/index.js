@@ -27,3 +27,45 @@ function calculatePivot() {
     document.getElementById('resistance2').textContent = `Resistance 2: ${resistance2.toFixed(2)}`;
     document.getElementById('resistance3').textContent = `Resistance 3: ${resistance3.toFixed(2)}`;
 }
+
+//------------------------------------------------------------------------------------------------------------------------>
+
+function calculateVibration() {
+    const inputValue = parseFloat(document.getElementById('inputValue').value);
+
+    if (isNaN(inputValue)) {
+        alert("Please enter a valid number.");
+        return;
+    }
+
+    const sqrt = Math.sqrt(inputValue);
+
+    function computeTime(multiplier, adjustment) {
+        let degree = ((multiplier * sqrt) - adjustment) % 180;
+        let totalHours = degree / 60;
+        let hours = Math.floor(totalHours);
+        let minutes = Math.round((totalHours % 1) * 60);
+
+        if (minutes >= 60) {
+            minutes -= 60;
+            hours += 1;
+        }
+
+        let finalHour = 9 + hours;
+        let finalMinute = 15 + minutes;
+
+        if (finalMinute >= 60) {
+            finalMinute -= 60;
+            finalHour += 1;
+        }
+
+        return `${finalHour}:${finalMinute.toString().padStart(2, '0')} a.m.`;
+    }
+
+    const vibration1 = computeTime(210, 180);
+    const vibration2 = computeTime(180, 225);
+
+    document.getElementById("vibration1").textContent = `First Vibration Time: ${vibration1}`;
+    document.getElementById("vibration2").textContent = `Second Vibration Time: ${vibration2}`;
+    document.getElementById("vibrationResults").style.display = 'block';
+}
