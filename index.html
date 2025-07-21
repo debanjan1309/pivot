@@ -25,8 +25,6 @@
         <button type="button" onclick="calculatePivot()">Calculate</button>
     </form>
 
-    
-
     <div id="results" class="results" style="display: none;">
         <h3>Results:</h3>
         <p id="pivot"></p>
@@ -36,6 +34,19 @@
         <p id="resistance1"></p>
         <p id="resistance2"></p>
         <p id="resistance3"></p>
+    </div>
+
+    <h1>Time Candle Calculator</h1>
+    <form id="vibrationForm">
+        <label for="inputValue">Enter a Value:</label>
+        <input type="number" id="inputValue" step="any" required>
+        <button type="button" onclick="calculateVibration()">Calculate</button>
+    </form>
+
+    <div id="vibrationResults" class="results" style="display: none;">
+        <h3>Vibration Times:</h3>
+        <p id="vibration1"></p>
+        <p id="vibration2"></p>
     </div>
 
     <div id="scanx_results" class="scanx_results">
