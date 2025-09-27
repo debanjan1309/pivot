@@ -43,7 +43,21 @@ button:hover {
     background: #e9f7f9;
     border: 1px solid #cce7eb;
     border-radius: 8px;
+    overflow-x: auto; 
 }
+.results table {
+    width: auto;
+    border-collapse: collapse;
+    table-layout: auto; 
+}
+
+.results th, 
+.results td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid ;
+}
+
 .scanx_results {
     width: 450px;
     margin: 50px auto;
@@ -68,4 +82,14 @@ button:hover {
 label {
     color:#ffffff;
     font-size: large;
+}
+@media (max-width: 600px) {
+    .scanx_results {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .header-title {
+        font-size: 1.4rem;
+    }
 }
