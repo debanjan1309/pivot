@@ -1,3 +1,4 @@
+// -------------------- PIVOT POINT CALCULATOR --------------------
 function calculatePivot() {
     const candleHigh = parseFloat(document.getElementById('candleHigh').value);
     const candleLow = parseFloat(document.getElementById('candleLow').value);
@@ -18,7 +19,7 @@ function calculatePivot() {
     const resistance2 = pivot + (0.618 * candleSize);
     const resistance3 = pivot + candleSize;
 
-    document.getElementById('results').style.display = 'block';
+    document.getElementById('pivotResults').style.display = 'block';
     document.getElementById('pivot').textContent = `Pivot: ${pivot.toFixed(2)}`;
     document.getElementById('support1').textContent = `Support 1: ${support1.toFixed(2)}`;
     document.getElementById('support2').textContent = `Support 2: ${support2.toFixed(2)}`;
@@ -28,8 +29,7 @@ function calculatePivot() {
     document.getElementById('resistance3').textContent = `Resistance 3: ${resistance3.toFixed(2)}`;
 }
 
-//------------------------------------------------------------------------------------------------------------------------------------------>
-
+// -------------------- GANN & VIBRATION CALCULATOR --------------------
 function calculateAll() {
     const inputValue = parseFloat(document.getElementById('inputValue').value);
 
@@ -86,10 +86,12 @@ function calculateAll() {
         const sl = Math.round((buy + sell) / 2 * 100) / 100;
 
         const resistances = [];
-        for (let i = 2; i <= 6; i++) resistances.push(Math.round(Math.pow(ir + base + i * step, 2) * 100) / 100);
+        for (let i = 2; i <= 6; i++)
+            resistances.push(Math.round(Math.pow(ir + base + i * step, 2) * 100) / 100);
 
         const supports = [];
-        for (let i = 1; i <= 5; i++) supports.push(Math.round(Math.pow(ir + base - i * step, 2) * 100) / 100);
+        for (let i = 1; i <= 5; i++)
+            supports.push(Math.round(Math.pow(ir + base - i * step, 2) * 100) / 100);
 
         const bt = resistances.map(r => Math.round(r * 0.9995 * 100) / 100);
         const st = supports.map(s => Math.round(s * 1.0005 * 100) / 100);
@@ -133,6 +135,5 @@ function calculateAll() {
 
     document.getElementById("vibration1").textContent = `Vibration 1 Times: ${vibrationTimes1.join(", ")}`;
     document.getElementById("vibration2").textContent = `Vibration 2 Times: ${vibrationTimes2.join(", ")}`;
-
-    document.getElementById("results").style.display = 'block';
+    document.getElementById("gannResults").style.display = 'block';
 }
